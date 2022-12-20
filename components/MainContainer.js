@@ -7,10 +7,11 @@ import Footer from "./Footer";
 export default function MainContainer({ children }) {
   return (
     <div className="flex flex-col h-screen w-screen pt-20 sm:pt-24 md:pt-32 px-6">
-      <CssBaseline />
       <Navbar />
-      <Container maxWidth="md">{children}</Container>
-      <Footer />
+      <Container maxWidth="sm">
+        {children}
+        <Footer />
+      </Container>
     </div>
   );
 }

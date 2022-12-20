@@ -1,29 +1,35 @@
 import { useEffect, useState } from "react";
 import Head from "next/head";
 
-import { Card, Typography } from "@mui/material";
+import { Box, Card, Typography } from "@mui/material";
 import { BsMouse } from "react-icons/bs";
 
 import IntroParagraph from "../components/essay/IntroParagraph";
-import { STANDARD_ESSAY } from "../data/dummy";
+import DevelopmentA from "../components/essay/DevelopmentA";
+import DevelopmentB from "../components/essay/DevelopmentB";
+import Conclusion from "../components/essay/Conclusion";
 
 export default function Home() {
   return (
-    <div>
+    <Box>
       <Head>
         <title>Redação ENEM · Início</title>
       </Head>
 
-      <main>
-        <Typography
-          variant="caption"
-          className="hidden md:flex justify-center items-center py-4 text-gray-400"
-        >
-          <BsMouse /> Passe o mouse para destacar o elemento e clique para
-          alterá-lo
-        </Typography>
+      <Typography
+        variant="caption"
+        className="hidden md:flex justify-center items-center py-4 text-gray-600"
+      >
+        <BsMouse /> Passe o mouse para destacar o elemento e clique para
+        alterá-lo
+      </Typography>
+
+      <Box className="flex flex-col gap-4 ">
         <IntroParagraph />
-      </main>
-    </div>
+        <DevelopmentA />
+        <DevelopmentB />
+        <Conclusion />
+      </Box>
+    </Box>
   );
 }
