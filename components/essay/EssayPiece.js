@@ -7,7 +7,9 @@ export default function EssayPiece({
   color,
   firstOfParagraph,
   lastOfParagraph,
+  paragraphIndex,
   index,
+  onClick,
 }) {
   const [isOnHover, setOnHover] = useState(false);
   const notHoverColor = "#FFFFFF";
@@ -38,14 +40,18 @@ export default function EssayPiece({
       onMouseEnter={onMouseHoverHandler}
       onMouseLeave={onMouseHoverHandler}
     >
-      <Typography variant="subtitle1" className={wrapperClassesText}>
+      <Typography
+        variant="subtitle1"
+        className={wrapperClassesText}
+        onClick={onClick}
+      >
         {index && (
           <Typography
             variant="caption"
             className="pr-1"
             style={{ color: isOnHover ? notHoverColor : color }}
           >
-            {`1.${index}`}
+            {`${paragraphIndex}.${index}`}
           </Typography>
         )}
 

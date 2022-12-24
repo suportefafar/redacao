@@ -8,6 +8,8 @@ export default function DevelopmentB() {
       title="Desenvolvimento B"
       color="#5C5C5C"
       pieces_paragraph={STANDARD_ESSAY.development_b}
+      paragraphIndex={3}
+      onPieceClick={() => {}}
     />
   );
 }

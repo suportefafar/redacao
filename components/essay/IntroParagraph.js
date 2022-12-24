@@ -7,6 +7,7 @@ export default function IntroParagraph() {
       title="Introdução"
       color="#4D8EF5"
       pieces_paragraph={STANDARD_ESSAY.intro}
+      paragraphIndex={1}
     />
   );
 }

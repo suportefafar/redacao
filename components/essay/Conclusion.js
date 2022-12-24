@@ -8,6 +8,8 @@ export default function Conclusion() {
       title="Conclusão"
       color="#E15F53"
       pieces_paragraph={STANDARD_ESSAY.conclusion}
+      paragraphIndex={4}
+      onPieceClick={() => {}}
     />
   );
 }

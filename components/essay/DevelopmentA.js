@@ -10,6 +10,8 @@ export default function DevelopmentA() {
       title="Desenvolvimento A"
       color="#0BA05B"
       pieces_paragraph={STANDARD_ESSAY.development_a}
+      paragraphIndex={2}
+      onPieceClick={() => {}}
     />
   );
 }

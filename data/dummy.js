@@ -4,9 +4,8 @@ const intro = [
   [
     "Promulgado pela ONU em 1948, a Declaração Universal dos Direitos " +
       "Humanos garante a todos os indivíduos o direto à segurança e ao bem-estar social.",
-    "Em sua obra 'O Cidadão de Papel', o escritor brasileiro Gilberto " +
-      "Dimenstein disserta que, embora o país apresente um conjunto de leis bastante " +
-      "consistente, elas se atêm, de forma geral, ao plano teórico.",
+    "Segundo o filósofo grego Aristóteles, a política deve ser articulada " +
+      "pelos homens a fim de alcançar o equilíbrio social.",
     "Segundo o filósofo grego Aristóteles, a política deve ser articulada " +
       "pelos homens a fim de alcançar o equilíbrio social.",
     "Agostinho de Hipona em certa homilia cunhou um aforismo simples mas " +
