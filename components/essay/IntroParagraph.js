@@ -1,5 +1,5 @@
 import EssayParagraph from "./EssayParagraph";
-import { STANDARD_ESSAY } from "../../data/dummy";
+import { STANDARD_ESSAY } from "../../data/dummy_database";
 
 export default function IntroParagraph() {
   return (

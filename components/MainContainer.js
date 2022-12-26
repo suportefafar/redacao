@@ -1,4 +1,4 @@
-import { Box, Container, CssBaseline } from "@mui/material";
+import { Box, Container, CssBaseline, Toolbar } from "@mui/material";
 
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
@@ -6,10 +6,11 @@ import Footer from "./Footer";
 
 export default function MainContainer({ children }) {
   return (
-    <div className="flex flex-col h-screen w-screen pt-20 sm:pt-24 md:pt-32 px-6">
+    <div className="flex flex-col h-screen w-screen px-6">
       <Navbar />
+      <Toolbar />
       <Container maxWidth="sm">
-        {children}
+        <Box className="py-4 sm:py-6">{children}</Box>
         <Footer />
       </Container>
     </div>

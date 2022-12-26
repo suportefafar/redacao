@@ -33,15 +33,18 @@ export default function EssayParagraph({
   const [pieces, setPieces] = useState([]);
 
   //--- POPOVER CONFIG ---
-  const [open, setOpen] = useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
 
-  const handleClick = () => {
-    setOpen(true);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
   };
 
   const handleClose = () => {
-    setOpen(false);
+    setAnchorEl(null);
   };
+
+  const open = Boolean(anchorEl);
+  const id = open ? "simple-popover" : undefined;
 
   //---------
 
@@ -78,7 +81,6 @@ export default function EssayParagraph({
           />
         ))}
         <Popover
-          id={id}
           open={open}
           anchorEl={anchorEl}
           onClose={handleClose}
@@ -86,8 +88,18 @@ export default function EssayParagraph({
             vertical: "bottom",
             horizontal: "left",
           }}
+          className="w-full h-full sm:w-8/12 sm:h-3/6 md:h-3/6"
         >
-          <Typography sx={{ p: 2 }}>The content of the Popover</Typography>
+          <List>
+            {[1, 2, 3, 4, 5, 6, 7].map((item) => (
+              <ListItemButton className="hover:bg-blue-100">
+                <ListItemText>
+                  Segundo o filósofo grego Aristóteles, a política deve ser
+                  articulada pelos homens a fim de alcançar o equilíbrio social.
+                </ListItemText>
+              </ListItemButton>
+            ))}
+          </List>
         </Popover>
       </Card>
     </Box>

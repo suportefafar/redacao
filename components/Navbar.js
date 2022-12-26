@@ -108,7 +108,7 @@ export default function Navbar({ window }) {
 
   return (
     <Box className="flex">
-      <AppBar component="nav" className="bg-white text-black">
+      <AppBar component="nav" className="shadow-md bg-white text-black">
         <Toolbar className="flex gap-4 justify-between">
           <Box className="flex items-center gap-4">
             <IconButton

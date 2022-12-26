@@ -16,7 +16,7 @@ export default function EssayPiece({
   const isConnective = piece.length <= 40 ? true : false;
 
   const wrapperClassesBox = classNames(
-    "inline mr-4 py-1 rounded-sm ease-out duration-200 hover:cursor-pointer hover:font-medium hover:text-white",
+    "inline mr-4 py-1 rounded-sm ease-out duration-200 hover:cursor-pointer hover:font-medium hover:text-white hover:md:animate-pulse",
     {
       ["ml-6"]: firstOfParagraph,
       [""]: !firstOfParagraph,

@@ -1,5 +1,5 @@
 import EssayParagraph from "./EssayParagraph";
-import { STANDARD_ESSAY } from "../../data/dummy";
+import { STANDARD_ESSAY } from "../../data/dummy_database";
 import { useEffect, useState } from "react";
 
 export default function DevelopmentB() {

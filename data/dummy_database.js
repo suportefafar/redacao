@@ -1,24 +1,125 @@
+/* TABLE
+    PIECES
+      - id
+      - text
+      - is_connective
+      - paragraph_id
+    
+    PARAGRAPH
+      - id
+      - name
+      - resumed_name
+*/
+
+const PARAGRAPHS = [
+  { id: 1, name: "Introdução", resumed_name: "intro" },
+  { id: 2, name: "Desenvolvimento A", resumed_name: "dev_a" },
+  { id: 3, name: "Desenvolvimento B", resumed_name: "dev_b" },
+  { id: 4, name: "Conclusão", resumed_name: "conclusion" },
+];
+
+const PIECES = [
+  {
+    id: 1,
+
+    text:
+      "Promulgado pela ONU em 1948, a Declaração Universal dos Direitos " +
+      "Humanos garante a todos os indivíduos o direto à segurança e ao bem-estar social.",
+    is_connective: false,
+    location_in_paragraph_id: 1,
+    paragraph_id: 1,
+  },
+  {
+    id: 2,
+    text:
+      "Segundo o filósofo grego Aristóteles, a política deve ser articulada " +
+      "pelos homens a fim de alcançar o equilíbrio social.",
+    is_connective: false,
+    location_in_paragraph_id: 1,
+    paragraph_id: 1,
+  },
+  {
+    id: 3,
+    text:
+      "Em sua obra “O Cidadão de Papel”, o escritor brasileiro Gilberto Dimenstein " +
+      "disserta que, embora o país apresente um conjunto de leis bastante " +
+      "consistente, elas se atêm, de forma geral, ao plano teórico.",
+    is_connective: false,
+    location_in_paragraph_id: 1,
+    paragraph_id: 1,
+  },
+  {
+    id: 4,
+    text:
+      "Agostinho de Hipona em certa homilia cunhou um aforismo simples mas " +
+      "significativo:'Ama e faz o que quiseres'.",
+    is_connective: false,
+    location_in_paragraph_id: 1,
+    paragraph_id: 1,
+  },
+
+  {
+    id: 5,
+    text: "No entanto, ",
+    is_connective: true,
+    location_in_paragraph_id: 1,
+    paragraph_id: 2,
+  },
+  {
+    id: 6,
+    text: "Toda via, ",
+    is_connective: true,
+    location_in_paragraph_id: 1,
+    paragraph_id: 1,
+  },
+  {
+    id: 7,
+    text: "Porém, ",
+    is_connective: true,
+    location_in_paragraph_id: 1,
+    paragraph_id: 1,
+  },
+  {
+    id: 8,
+    text: "Conquanto, ",
+    is_connective: true,
+    location_in_paragraph_id: 1,
+    paragraph_id: 1,
+  },
+  {
+    id: 9,
+    text: "Contanto, ",
+    is_connective: true,
+    location_in_paragraph_id: 1,
+    paragraph_id: 1,
+  },
+  {
+    id: 10,
+    text: "Diante disso, ",
+    is_connective: true,
+    location_in_paragraph_id: 1,
+    paragraph_id: 1,
+  },
+
+  {
+    id: 9,
+    text: "Contanto, ",
+    is_connective: false,
+    location_in_paragraph_id: 1,
+    paragraph_id: 1,
+  },
+  {
+    id: 10,
+    text: "Diante disso, ",
+    is_connective: false,
+    location_in_paragraph_id: 1,
+    paragraph_id: 1,
+  },
+];
+
 const connective = [];
 const problems = { problem_a: "", problem_b: "" };
 const intro = [
-  [
-    "Promulgado pela ONU em 1948, a Declaração Universal dos Direitos " +
-      "Humanos garante a todos os indivíduos o direto à segurança e ao bem-estar social.",
-    "Segundo o filósofo grego Aristóteles, a política deve ser articulada " +
-      "pelos homens a fim de alcançar o equilíbrio social.",
-    "Segundo o filósofo grego Aristóteles, a política deve ser articulada " +
-      "pelos homens a fim de alcançar o equilíbrio social.",
-    "Agostinho de Hipona em certa homilia cunhou um aforismo simples mas " +
-      "significativo:'Ama e faz o que quiseres'.",
-  ],
-  [
-    "No entanto,",
-    "Toda via,",
-    "Porém,",
-    "Conquanto,",
-    "Contanto,",
-    "Diante disso,",
-  ],
   [
     "a 'PROBLEMA' impossibilita que essa parcela da população desfrute desse direito " +
       "universal na prática.",
