@@ -1,12 +1,12 @@
 import EssayParagraph from "./EssayParagraph";
-import { STANDARD_ESSAY } from "../../data/dummy_database";
 
-export default function IntroParagraph() {
+export default function IntroParagraph({ pieces, paragraph }) {
+  console.log("NA INTRO", pieces, paragraph);
   return (
     <EssayParagraph
       title="Introdução"
       color="#4D8EF5"
-      pieces_paragraph={STANDARD_ESSAY.intro}
+      pieces_paragraph={pieces}
       paragraphIndex={1}
     />
   );

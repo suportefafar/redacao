@@ -3,20 +3,20 @@ import classNames from "classnames";
 import { useState } from "react";
 
 export default function EssayPiece({
-  piece,
+  pieceText,
   color,
   firstOfParagraph,
   lastOfParagraph,
   paragraphIndex,
-  index,
+  locationIndex,
+  isConnective,
   onClick,
 }) {
   const [isOnHover, setOnHover] = useState(false);
   const notHoverColor = "#FFFFFF";
-  const isConnective = piece.length <= 40 ? true : false;
 
   const wrapperClassesBox = classNames(
-    "inline mr-4 py-1 rounded-sm ease-out duration-200 hover:cursor-pointer hover:font-medium hover:text-white hover:md:animate-pulse",
+    "inline mr-4 p-1 rounded-sm ease-out duration-200 hover:cursor-pointer hover:font-medium hover:text-white",
     {
       ["ml-6"]: firstOfParagraph,
       [""]: !firstOfParagraph,
@@ -41,21 +41,25 @@ export default function EssayPiece({
       onMouseLeave={onMouseHoverHandler}
     >
       <Typography
+        variant="caption"
+        className="pr-1"
+        style={{ color: isOnHover ? notHoverColor : color }}
+      >
+        {`${paragraphIndex}.${locationIndex}`}
+      </Typography>
+      <Typography
         variant="subtitle1"
         className={wrapperClassesText}
-        onClick={onClick}
+        onClick={(event) => {
+          onClick(
+            event,
+            paragraphIndex,
+            locationIndex,
+            event.currentTarget.innerText
+          );
+        }}
       >
-        {index && (
-          <Typography
-            variant="caption"
-            className="pr-1"
-            style={{ color: isOnHover ? notHoverColor : color }}
-          >
-            {`${paragraphIndex}.${index}`}
-          </Typography>
-        )}
-
-        {piece}
+        {pieceText}
       </Typography>
     </Box>
   );

@@ -9,7 +9,20 @@ import DevelopmentA from "../components/essay/DevelopmentA";
 import DevelopmentB from "../components/essay/DevelopmentB";
 import Conclusion from "../components/essay/Conclusion";
 
-export default function Home() {
+import { getAllIntroPieces, getParagraphById } from "../data/dummy_controller";
+import EssayParagraph from "../components/essay/EssayParagraph";
+
+export async function getServerSideProps(context) {
+  const intro_pieces = getAllIntroPieces();
+  const paragraph = getParagraphById(1);
+
+  return {
+    props: { intro_pieces, paragraph }, // will be passed to the page component as props
+  };
+}
+
+export default function Home({ intro_pieces, paragraph }) {
+  console.log(intro_pieces);
   return (
     <Box>
       <Head>
@@ -40,10 +53,12 @@ export default function Home() {
         </Box>
 
         <Box className="flex flex-col gap-4 ">
-          <IntroParagraph />
-          <DevelopmentA />
-          <DevelopmentB />
-          <Conclusion />
+          <EssayParagraph
+            title={paragraph.title}
+            color="#4D8EF5"
+            paragraphIndex={paragraph.id}
+            piecesSeparatedByLocation={intro_pieces}
+          />
         </Box>
       </Box>
     </Box>

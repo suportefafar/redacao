@@ -82,7 +82,12 @@ export default function Navbar({ window }) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Box className="flex gap-4 items-center m-4">
-        <Image src="/images/icon.svg" width={32} height={32} />
+        <Image
+          src="/images/icon.svg"
+          width={32}
+          height={32}
+          alt="Logo Redação ENEM"
+        />
         <Typography variant="body1" component="div" className="font-bold">
           Redação ENEM
         </Typography>
@@ -122,7 +127,12 @@ export default function Navbar({ window }) {
               <MdMenu />
             </IconButton>
             <Box className="flex items-center gap-2">
-              <Image src="/images/icon.svg" width={32} height={32} />
+              <Image
+                src="/images/icon.svg"
+                width={32}
+                height={32}
+                alt="Logo Redação ENEM"
+              />
               <Typography variant="body1" component="div" className="font-bold">
                 Redação ENEM
               </Typography>
