@@ -20,9 +20,13 @@ import {
   MdMenu,
   MdSearch,
   MdOutlineTipsAndUpdates,
+  MdOutlineInfo,
 } from "react-icons/md";
 import { BsJournalText, BsFileRichtext } from "react-icons/bs";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import classNames from "classnames";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -66,13 +70,29 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+const navItems_ideal = [
+  { text: "Início", icon: <MdOutlineHome />, href: "/" },
+  { text: "Dicas", icon: <MdOutlineTipsAndUpdates />, href: "/tips" },
+  { text: "Redações 1000", icon: <BsJournalText />, href: "/tops-essays" },
+  {
+    text: "Manual Oficial",
+    icon: <BsFileRichtext />,
+    href: "/official-manual",
+  },
+];
+
+const navItems = [
+  { text: "Início", icon: <MdOutlineHome />, href: "/" },
+  {
+    text: "Manual Oficial",
+    icon: <BsFileRichtext />,
+    href: "/official-manual",
+  },
+];
+
 export default function Navbar({ window }) {
-  const navItems = [
-    { text: "Início", icon: <MdOutlineHome />, href: "/" },
-    { text: "Dicas", icon: <MdOutlineTipsAndUpdates />, href: "/" },
-    { text: "Redações 1000", icon: <BsJournalText />, href: "/" },
-    { text: "Manual Oficial", icon: <BsFileRichtext />, href: "/" },
-  ];
+  const router = useRouter();
+
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
@@ -93,16 +113,33 @@ export default function Navbar({ window }) {
         </Typography>
       </Box>
       <Divider />
-      <List>
-        {navItems.map((item) => (
-          <ListItem key={item.text} disablePadding>
-            <ListItemButton className="flex gap-4">
-              <Box className="text-2xl">{item.icon}</Box>
-              <ListItemText primary={item.text} />
-            </ListItemButton>
-          </ListItem>
+
+      <Box>
+        {navItems.map((item, index) => (
+          <Box key={index}>
+            {router.asPath === item.href ? (
+              <Button
+                startIcon={item.icon}
+                className="flex justify-start px-6 py-4 bg-blue-50 hover:bg-blue-50"
+                fullWidth
+              >
+                {item.text}
+              </Button>
+            ) : (
+              <Link href={item.href}>
+                <Button
+                  startIcon={item.icon}
+                  color="inherit"
+                  className="flex justify-start px-6 py-4"
+                  fullWidth
+                >
+                  {item.text}
+                </Button>
+              </Link>
+            )}
+          </Box>
         ))}
-      </List>
+      </Box>
     </Box>
   );
 
@@ -139,21 +176,27 @@ export default function Navbar({ window }) {
             </Box>
           </Box>
 
-          <Box className="hidden md:flex gap-1">
-            {navItems.map((item) => (
-              <Button key={item.text}>{item.text}</Button>
+          <Box className="hidden md:flex items-center gap-1">
+            {navItems.map((item, index) => (
+              <Box key={index}>
+                {router.asPath === item.href ? (
+                  <Button className="hover:bg-transparent">{item.text}</Button>
+                ) : (
+                  <Link href={item.href}>
+                    <Button color="inherit">{item.text}</Button>
+                  </Link>
+                )}
+              </Box>
             ))}
           </Box>
 
-          <Search className="hidden sm:block">
-            <SearchIconWrapper>
-              <MdSearch />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Procurar…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
+          <Button
+            color="inherit"
+            startIcon={<MdSearch />}
+            className="px-4 py-2 normal-case bg-gray-50 text-gray-400 "
+          >
+            Pesquisar...
+          </Button>
         </Toolbar>
       </AppBar>
 

@@ -1,7 +1,6 @@
 import { Box, Container, CssBaseline, Toolbar } from "@mui/material";
 
 import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 
 export default function MainContainer({ children }) {

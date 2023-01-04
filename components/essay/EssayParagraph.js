@@ -22,7 +22,6 @@ function chooseRandomPiece(pieces) {
 }
 
 function generatePiecesOptions(pieces_text, selected_piece_text) {
-  console.log(selected_piece_text);
   const arr = pieces_text.map((item) => ({
     text: item,
     selected: item === selected_piece_text,
@@ -55,24 +54,21 @@ export default function EssayParagraph({
     setAnchorElement(null);
   }
 
-  function onPieceClickHandler(
-    event,
-    paragraphIndex,
-    locationIndex,
-    pieceText
-  ) {
+  function onPieceClickHandler(event, element, paragraphIndex, locationIndex) {
     const location_pieces = piecesSeparatedByLocation.find(
       (item) =>
         item.location_index == locationIndex &&
         item.paragraph_index == paragraphIndex
     );
 
+    const pieceText = element.innerText;
+
     if (location_pieces) {
       setPiecesOptions(
         generatePiecesOptions(location_pieces.pieces, pieceText)
       );
       setSelectedPiece(pieceText);
-      setAnchorElement(event.currentTarget);
+      setAnchorElement(element);
     }
   }
 
@@ -95,8 +91,6 @@ export default function EssayParagraph({
     });
     setPieces(array_aux);
   }, []);
-
-  //console.log(piecesOptions);
 
   return (
     <Box>

@@ -57,3 +57,30 @@ export function getAllIntroPieces() {
 
   return pieces_separated_by_location;
 }
+
+export function getAllDevelopmentAPieces() {
+  const pieces = PIECES.filter((item) => item.paragraph_id === 2);
+  const pieces_asc_sorted = sortByLocationInParagraphId(pieces);
+  const pieces_separated_by_location =
+    separateByLocationInParagraph(pieces_asc_sorted);
+
+  return pieces_separated_by_location;
+}
+
+export function getAllDevelopmentBPieces() {
+  const pieces = PIECES.filter((item) => item.paragraph_id === 3);
+  const pieces_asc_sorted = sortByLocationInParagraphId(pieces);
+  const pieces_separated_by_location =
+    separateByLocationInParagraph(pieces_asc_sorted);
+
+  return pieces_separated_by_location;
+}
+
+export function getAllConclusionPieces() {
+  const pieces = PIECES.filter((item) => item.paragraph_id === 4);
+  const pieces_asc_sorted = sortByLocationInParagraphId(pieces);
+  const pieces_separated_by_location =
+    separateByLocationInParagraph(pieces_asc_sorted);
+
+  return pieces_separated_by_location;
+}
