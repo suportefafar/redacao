@@ -28,59 +28,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import classNames from "classnames";
 
-const Search = styled("div")(({ theme }) => ({
-  position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.black, 0.05),
-  "&:hover": {
-    backgroundColor: alpha(theme.palette.common.black, 0.1),
-  },
-  marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(1),
-    width: "auto",
-  },
-}));
-
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "inherit",
-  "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      width: "12ch",
-      "&:focus": {
-        width: "20ch",
-      },
-    },
-  },
-}));
-
-const navItems_ideal = [
-  { text: "Início", icon: <MdOutlineHome />, href: "/" },
-  { text: "Dicas", icon: <MdOutlineTipsAndUpdates />, href: "/tips" },
-  { text: "Redações 1000", icon: <BsJournalText />, href: "/tops-essays" },
-  {
-    text: "Manual Oficial",
-    icon: <BsFileRichtext />,
-    href: "/official-manual",
-  },
-];
-
 const navItems = [
   { text: "Início", icon: <MdOutlineHome />, href: "/" },
   {
@@ -150,7 +97,11 @@ export default function Navbar({ window }) {
 
   return (
     <Box className="flex">
-      <AppBar component="nav" className="shadow-md bg-white text-black">
+      <AppBar
+        component="nav"
+        position="absolute"
+        className="shadow-md bg-white text-black"
+      >
         <Toolbar className="flex gap-4 justify-between">
           <Box className="flex items-center gap-4">
             <IconButton
@@ -193,7 +144,7 @@ export default function Navbar({ window }) {
           <Button
             color="inherit"
             startIcon={<MdSearch />}
-            className="px-4 py-2 normal-case bg-gray-50 text-gray-400 "
+            className="px-4 lg:pr-8 py-2 normal-case bg-gray-50 text-gray-400 "
           >
             Pesquisar...
           </Button>
