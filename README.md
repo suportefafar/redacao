@@ -11,10 +11,14 @@ O Bootstrap 5 é carregado por CDN; é necessária uma conexão com a internet p
 ## Como usar
 
 1. Ao abrir a página, uma alternativa é sorteada para cada trecho da redação.
-2. Clique ou toque em um trecho para ver outras opções. Pelo teclado, use Tab para chegar ao trecho e Enter ou Espaço para abrir as opções.
-3. Escolha uma alternativa para substituir o texto exibido.
+2. Clique ou toque em qualquer trecho para ver outras opções. Pelo teclado, use Tab para chegar ao trecho e Enter ou Espaço para abrir as opções.
+3. Escolha uma alternativa para mudar apenas esse trecho; os demais continuam como estão.
 
-As escolhas duram apenas enquanto a página está aberta. Ao recarregá-la, os trechos são sorteados novamente. Marcadores como `PROBLEMA` e `MOTIVO_1` fazem parte dos modelos de texto e não são preenchidos automaticamente.
+Exemplo do trecho 1.4 com as alternativas abertas:
+
+![Trecho 1.4 da introdução com quatro alternativas; “Nesse contexto,” está selecionado.](./assets/trecho-alternativas.png)
+
+As escolhas duram apenas enquanto a página está aberta. Ao atualizar a página, uma nova alternativa é sorteada para cada trecho. Marcadores como `PROBLEMA` e `MOTIVO_1` fazem parte dos modelos de texto e não são preenchidos automaticamente.
 
 O rodapé reúne documentos oficiais sobre redação no ENEM e em concursos públicos, além de três referências bibliográficas.
 
