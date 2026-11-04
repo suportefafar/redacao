@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Monte uma redação escolhendo trechos para introdução, desenvolvimento e conclusão.">
+    <title>Redação</title>
+    <link rel="icon" type="image/svg+xml" href="./icon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous" defer></script>
+    <script src="./data.js" defer></script>
+    <script src="./script.js" defer></script>
+  </head>
+  <body class="bg-body-tertiary">
+    <main class="container essay-layout py-4 py-md-5">
+      <section class="essay-section mb-4" data-paragraph="1" aria-labelledby="introduction-title">
+        <h2 id="introduction-title" class="essay-heading h5 mb-2">Introdução</h2>
+        <div class="card essay-card shadow-sm">
+          <div class="card-body essay-content"></div>
+        </div>
+      </section>
+
+      <section class="essay-section mb-4" data-paragraph="2" aria-labelledby="development-a-title">
+        <h2 id="development-a-title" class="essay-heading h5 mb-2">Desenvolvimento A</h2>
+        <div class="card essay-card shadow-sm">
+          <div class="card-body essay-content"></div>
+        </div>
+      </section>
+
+      <section class="essay-section mb-4" data-paragraph="3" aria-labelledby="development-b-title">
+        <h2 id="development-b-title" class="essay-heading h5 mb-2">Desenvolvimento B</h2>
+        <div class="card essay-card shadow-sm">
+          <div class="card-body essay-content"></div>
+        </div>
+      </section>
+
+      <section class="essay-section mb-4" data-paragraph="4" aria-labelledby="conclusion-title">
+        <h2 id="conclusion-title" class="essay-heading h5 mb-2">Conclusão</h2>
+        <div class="card essay-card shadow-sm">
+          <div class="card-body essay-content"></div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer mt-5">
+      <div class="container footer-layout py-4">
+        <div class="row g-4">
+          <section class="col-md-4" aria-labelledby="footer-enem-title">
+              <h2 id="footer-enem-title" class="h6 mb-3">ENEM</h2>
+              <ul class="footer-list mb-0">
+                <li><a href="https://www.gov.br/inep/pt-br/centrais-de-conteudo/acervo-linha-editorial/publicacoes-institucionais/avaliacoes-e-exames-da-educacao-basica/a-redacao-do-enem-2026-cartilha-do-a-participante" target="_blank" rel="noopener noreferrer">Cartilha do Participante 2026</a></li>
+                <li><a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/outros-documentos" target="_blank" rel="noopener noreferrer">Manuais de correção da redação</a></li>
+              </ul>
+          </section>
+          <section class="col-md-4" aria-labelledby="footer-concursos-title">
+              <h2 id="footer-concursos-title" class="h6 mb-3">Concursos públicos</h2>
+              <ul class="footer-list mb-0">
+                <li><a href="https://www.gov.br/pt-br/servicos/consultar-o-manual-de-redacao-da-presidencia-da-republica" target="_blank" rel="noopener noreferrer">Manual de Redação da Presidência da República</a></li>
+                <li><a href="https://www2.senado.leg.br/bdsf/bitstream/handle/id/70468/Manual%20de%20Elaboracao%20de%20Textos.pdf" target="_blank" rel="noopener noreferrer">Manual de Elaboração de Textos do Senado</a></li>
+                <li><a href="https://conhecimento.fgv.br/sites/default/files/concursos/edital_concurso-publico-nacional-unificado-2_7aret_12.11.25_0.pdf" target="_blank" rel="noopener noreferrer">Edital CPNU 2: critérios da prova discursiva</a></li>
+                <li><a href="https://cdn.cebraspe.org.br/concursos/cd_25_ns/arquivos/27248E25BD2C45EDC2C71F760A7FA4F331CFFF250C687E9FABCE91651E1FCC92.pdf" target="_blank" rel="noopener noreferrer">Exemplo de padrão de resposta: Câmara dos Deputados</a></li>
+              </ul>
+          </section>
+          <section class="col-md-4" aria-labelledby="footer-bibliography-title">
+            <h2 id="footer-bibliography-title" class="h6 mb-3">Bibliografia</h2>
+            <ul class="footer-list mb-0">
+              <li><cite>Comunicação em prosa moderna</cite> — Othon M. Garcia</li>
+              <li><cite>Ler e escrever: estratégias de produção textual</cite> — Ingedore Villaça Koch e Vanda Maria Elias</li>
+              <li><cite>Argumentação</cite> — José Luiz Fiorin</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+      <div class="container footer-layout footer-content py-4">
+        <div class="footer-brand">
+          <img src="./faculty-icon.png" width="24" height="24" alt="" class="faculty-icon">
+          <span>Faculdade de Farmácia <small>UFMG</small></span>
+        </div>
+        <span class="footer-divider" aria-hidden="true"></span>
+        <div class="footer-brand">
+          <img src="./icon.svg" width="24" height="21" alt="" class="application-icon">
+          <span>Redação</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

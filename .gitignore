@@ -102,3 +102,7 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Arquivos locais de referência
+old/
+specs.md

@@ -1,0 +1,181 @@
+body {
+  min-height: 100vh;
+}
+
+.essay-layout {
+  max-width: 720px;
+}
+
+.essay-section {
+  --piece-color: #4d8ef5;
+}
+
+.essay-section[data-paragraph="2"] {
+  --piece-color: #0ba05b;
+}
+
+.essay-section[data-paragraph="3"] {
+  --piece-color: #5c5c5c;
+}
+
+.essay-section[data-paragraph="4"] {
+  --piece-color: #e15f53;
+}
+
+.essay-heading {
+  color: var(--piece-color);
+  font-weight: 600;
+}
+
+.essay-card {
+  border-color: var(--piece-color);
+}
+
+.essay-content {
+  line-height: 2.25;
+  text-align: justify;
+}
+
+.essay-piece {
+  display: inline;
+  border: 0;
+  border-radius: 0.25rem;
+  background: transparent;
+  color: var(--bs-body-color);
+  font: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  cursor: pointer;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.essay-piece.is-connective {
+  background-color: #fff3cd;
+  padding: 0.15rem 0.3rem;
+  margin: 0 0.12rem;
+}
+
+.essay-piece:hover,
+.essay-piece:focus-visible {
+  background-color: var(--piece-color);
+  color: #fff;
+}
+
+.essay-piece:focus-visible {
+  outline: 2px solid var(--piece-color);
+  outline-offset: 2px;
+}
+
+.piece-number {
+  color: var(--piece-color);
+  font-size: 0.75em;
+  margin-right: 0.25rem;
+}
+
+.essay-piece:hover .piece-number,
+.essay-piece:focus-visible .piece-number {
+  color: inherit;
+}
+
+.essay-popover {
+  --bs-popover-max-width: min(28rem, calc(100vw - 2rem));
+}
+
+.essay-options {
+  max-height: min(22rem, 50vh);
+  overflow-y: auto;
+}
+
+.essay-options .list-group-item {
+  white-space: normal;
+  line-height: 1.4;
+}
+
+.site-footer {
+  background-color: #f2f0ec;
+  border-top: 2px solid #f2b600;
+  color: #2d2520;
+}
+
+.footer-layout {
+  max-width: 960px;
+}
+
+.site-footer h2 {
+  font-weight: 600;
+}
+
+.footer-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 0.875rem;
+}
+
+.footer-list li + li {
+  margin-top: 0.65rem;
+}
+
+.footer-list a {
+  color: #1a5fa8;
+  text-underline-offset: 0.15em;
+}
+
+.footer-list a:hover,
+.footer-list a:focus-visible {
+  color: #12467d;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  border-top: 1px solid #e4e0d8;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.footer-brand small {
+  display: block;
+  margin-top: 0.15rem;
+  color: #806000;
+  font-family: var(--bs-font-sans-serif);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.faculty-icon {
+  flex: none;
+}
+
+.application-icon {
+  flex: none;
+}
+
+.footer-divider {
+  width: 1px;
+  height: 2rem;
+  background-color: #c8c2b6;
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer-divider {
+    width: 2rem;
+    height: 1px;
+  }
+}
